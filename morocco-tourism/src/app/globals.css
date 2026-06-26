@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Atlas & Sand — design tokens
+   Palette grounded in zellij tilework & desert light:
+   - sand:      warm paper background
+   - ink:       deep indigo-black, primary text & dark sections
+   - indigo:    Majorelle-adjacent blue, primary brand color
+   - terracotta:clay/brass accent, CTAs & highlights
+   - gold:      aged brass, secondary accent
+----------------------------------------------------------------- */
+@theme {
+  --color-sand: #faf6ee;
+  --color-sand-deep: #f0e9d8;
+  --color-ink: #14222b;
+  --color-indigo: #1b3a4b;
+  --color-indigo-deep: #0f1f27;
+  --color-terracotta: #c1652f;
+  --color-terracotta-light: #e08a4f;
+  --color-gold: #c9974c;
+  --color-gold-light: #e3c178;
+  --color-cream: #fffdf8;
+
+  --font-display: var(--font-display-raw);
+  --font-body: var(--font-body-raw);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-sand);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+/* Focus visibility kept intentional and on-brand rather than the browser default */
+:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Zellij line-pattern, used sparingly as a signature texture */
+.zellij-bg {
+  background-image: url("/pattern/zellij.svg");
+  background-repeat: repeat;
+  background-size: 120px 120px;
+}
+
+.text-shadow-soft {
+  text-shadow: 0 2px 24px rgba(15, 31, 39, 0.35);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Custom scrollbar — quiet, not the OS default, fits the dark sections */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 8px;
+}
