@@ -2,9 +2,9 @@
 // Swap image URLs for your own photography whenever you're ready —
 // every image is referenced from this single file.
 
-export const WHATSAPP_NUMBER = "212600000000"; // TODO: replace with the real business WhatsApp number (no + or leading 0s)
-export const CONTACT_EMAIL = "hello@atlasandsand.ma";
-export const CONTACT_PHONE = "+212 600-000000";
+export const WHATSAPP_NUMBER = "212700199691"; 
+export const CONTACT_EMAIL = "fatimabkt267@gmail.com";
+export const CONTACT_PHONE = "+212 700-199691";
 export const OFFICE_ADDRESS = "12 Rue des Oliviers, Gueliz, Marrakech 40000, Morocco";
 
 export type Trip = {
